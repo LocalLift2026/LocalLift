@@ -6,14 +6,14 @@ import Footer from "../components/Footer/index.astro";
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/public/assets/logos/localLift.svg"
-    />
+    <link rel="icon" type="image/svg+xml" href="/svg/logos/localLift.svg" />
     <meta name="viewport" content="width=device-width" />
     <!-- <meta name="generator" content={Astro.generator} /> -->
     <title>Local Lift</title>
+    <meta
+      name="description"
+      content="LocalLift helps local businesses build fast, optimized websites that improve performance, accessibility, best practices, and SEO to rank better and grow online."
+    />
     <style is:global>
       :root {
         --step--2: clamp(0.9882rem, 0.9531rem + 0.1651vw, 1.1285rem);
@@ -39,10 +39,14 @@ import Footer from "../components/Footer/index.astro";
 
       p,
       a,
-      li {
+      li,
+      input,
+      textarea,
+      legend,
+      label {
         font-family:
           ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
       }
       p {
         font-size: clamp(1.125rem, 0.9794rem + 0.3527vw, 1.3rem);

@@ -1,8 +1,12 @@
 ---
+import FAQs from "@/sections/contact/FAQs.astro";
 import BaseLayout from "../layout/BaseLayout.astro";
-import ContactForm from "../sections/contact/ContactForm.astro";
+import ContactForm from "../sections/contact/ContactForm/index.astro";
+import CTA from "../sections/contact/CTA.astro";
 ---
 
 <BaseLayout>
   <ContactForm />
+  <FAQs />
+  <CTA />
 </BaseLayout>

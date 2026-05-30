@@ -1,0 +1,206 @@
+---
+
+---
+
+<form>
+    <div class="input-wrapper">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" name="first-name" />
+    </div>
+
+    <div class="input-wrapper">
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" name="last-name" />
+    </div>
+
+    <div class="input-wrapper">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" />
+    </div>
+
+    <div class="input-wrapper">
+        <label for="phone-number">Phone Number</label>
+        <input type="tel" id="phone-number" name="phone-number" />
+    </div>
+    <fieldset class="options-wrapper span2">
+        <legend>Select Subject?</legend>
+
+        <div class="option-wrapper">
+            <input
+                type="radio"
+                id="general-inquiry"
+                name="inquiry-type"
+                value="general-inquiry"
+                required
+            />
+            <label for="general-inquiry">General Inquiry</label>
+        </div>
+
+        <div class="option-wrapper">
+            <input
+                type="radio"
+                id="pricing-packages"
+                name="inquiry-type"
+                value="pricing-packages"
+            />
+            <label for="pricing-packages">Pricing &amp; Packages</label>
+        </div>
+
+        <div class="option-wrapper">
+            <input
+                type="radio"
+                id="free-audit"
+                name="inquiry-type"
+                value="free-audit"
+            />
+            <label for="free-audit">Request a Free Audit</label>
+        </div>
+
+        <div class="option-wrapper">
+            <input type="radio" id="other" name="inquiry-type" value="other" />
+            <label for="other">Other</label>
+        </div>
+    </fieldset>
+    <div class="input-wrapper span2">
+        <label for="message">Message</label>
+        <textarea id="message" name="message"></textarea>
+    </div>
+    <button class="span2">Send Message</button>
+</form>
+
+<style>
+    .span2 {
+        grid-column: span 2;
+    }
+
+    form {
+        padding: 40px 40px 120px 40px;
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+        & > button {
+            margin-left: auto;
+            margin-right: 0;
+        }
+    }
+
+    .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+        color: #8d8d8d;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 40ms;
+        & > input,
+        textarea {
+            width: 100%;
+            resize: none;
+            font-size: 1rem;
+            border: transparent;
+            border-bottom: solid black 1px;
+            padding-bottom: 5px;
+            color: #8d8d8d;
+        }
+    }
+    .input-wrapper:focus-within {
+        color: black;
+        font-weight: 500;
+
+        & > input,
+        textarea {
+            outline: transparent;
+            color: black;
+            font-weight: 400;
+        }
+    }
+
+    .options-wrapper {
+        margin: 0;
+        padding: 0;
+        border: none;
+        display: flex;
+        align-items: start;
+        text-align: start;
+        row-gap: 10px;
+        column-gap: 20px;
+        flex-wrap: wrap;
+        & > legend {
+            width: 100%;
+            padding-bottom: 25px;
+            font-weight: 650;
+            font-size: 1.1rem;
+        }
+        & > .option-wrapper {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 600px) {
+        form {
+            grid-template-columns: 1fr;
+            padding: 24px;
+        }
+
+        .span2 {
+            grid-column: span 1;
+        }
+    }
+
+    /* SECTION - Below is the style for the radio input */
+
+    /* Hide the native radio */
+    .option-wrapper input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    /* Custom radio */
+    .option-wrapper label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+    }
+
+    /* Grey unchecked circle */
+    .option-wrapper label::before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #e0e0e0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    /* Black checked circle */
+    .option-wrapper input[type="radio"]:checked + label::before {
+        background: #000;
+    }
+
+    /* White check mark */
+    .option-wrapper input[type="radio"]:checked + label::after {
+        content: "✓";
+        position: absolute;
+        left: 3px;
+        top: 50%;
+        transform: translateY(-52%);
+        color: white;
+        font-size: 10px;
+        line-height: 1;
+        font-weight: 700;
+    }
+
+    /* Optional keyboard focus style */
+    .option-wrapper input[type="radio"]:focus-visible + label::before {
+        outline: 2px solid black;
+        outline-offset: 2px;
+    }
+</style>

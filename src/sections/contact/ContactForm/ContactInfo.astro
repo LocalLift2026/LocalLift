@@ -1,0 +1,134 @@
+---
+import phoneIcon from "@svg/icons/phone-calling.svg";
+import mailIcon from "@svg/icons/mail.svg";
+import locationIcon from "@svg/icons/location.svg";
+
+import Facebook from "@svg/logos/facebookIcon.svg";
+import Twitter from "@svg/logos/twitterIcon.svg";
+import LinkedIn from "@svg/logos/linkedinIcon.svg";
+
+import CircleIcon from "@svg/icons/circle.svg";
+
+const contactInfo = [
+    {
+        Icon: phoneIcon,
+        info: "+1 (206)458-3197",
+    },
+    {
+        Icon: mailIcon,
+        info: "locallift2026@gmail.com",
+    },
+    // {
+    //     Icon: locationIcon,
+    //     info: "132 Dartmouth Street Boston, Massachusetts 02156 United States",
+    // },
+];
+
+const socialLinks = [
+    {
+        Icon: Facebook,
+        href: "https://facebook.com/yourpage",
+        ariaLabel: "Facebook",
+    },
+    {
+        Icon: Twitter,
+        href: "https://twitter.com/yourpage",
+        ariaLabel: "Twitter",
+    },
+    {
+        Icon: LinkedIn,
+        href: "https://linkedin.com/in/yourpage",
+        ariaLabel: "LinkedIn",
+    },
+];
+---
+
+<div class="container">
+    <CircleIcon class="smaller-circle" />
+    <CircleIcon class="bigger-circle" />
+    <div class="header-wrapper">
+        <h2>Contact Information</h2>
+    </div>
+    <div class="info-wrapper">
+        {
+            contactInfo.map(({ Icon, info }) => (
+                <div>
+                    <Icon />
+                    <p>{info}</p>
+                </div>
+            ))
+        }
+    </div>
+    <div class="icon-wrapper">
+        {
+            socialLinks.map(({ Icon, href, ariaLabel }) => (
+                <a href={href} target="_blank" aria-label={ariaLabel}>
+                    <Icon aria-hidden="true" focusable="false" />
+                </a>
+            ))
+        }
+    </div>
+</div>
+
+<style>
+    .container {
+        position: relative;
+        padding: 40px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        border-radius: 8px;
+        color: white;
+        justify-content: space-between;
+        gap: min(150px, 10vw);
+        & > .smaller-circle,
+        .bigger-circle {
+            position: absolute;
+        }
+        & > .smaller-circle {
+            right: 80px;
+            bottom: 80px;
+            left: unset;
+            top: unset;
+            opacity: 0.6;
+        }
+        & > .bigger-circle {
+            right: -20px;
+            bottom: -20px;
+            left: unset;
+            top: unset;
+            transform: scale(1.96, 1.96);
+            opacity: 0.35;
+        }
+    }
+
+    .header-wrapper {
+        & > h2 {
+            font-size: var(--step-2);
+            text-align: start;
+            margin: 0;
+        }
+    }
+
+    .info-wrapper {
+        & > div {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+
+    .icon-wrapper {
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        & > a > svg {
+            max-width: 20px;
+            max-height: 20px;
+            fill: white;
+            cursor: pointer;
+        }
+    }
+</style>

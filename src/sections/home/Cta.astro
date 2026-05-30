@@ -1,5 +1,5 @@
 ---
-import CtaSecurityDiagram from "../../../public/assets/homePage/cta-security-diagram.svg";
+import CtaSecurityDiagram from "@images/Home/Cta/cta-security-diagram.webp";
 import Smudge from "@svg/icons/smudge.svg";
 
 import { Image } from "astro:assets";
@@ -16,7 +16,13 @@ import { Image } from "astro:assets";
     <button>Get Started</button>
   </div>
 
-  <CtaSecurityDiagram class="cta-diagram" />
+  <Image
+    class="cta-diagram"
+    src={CtaSecurityDiagram}
+    alt="Hero Image"
+    format="webp"
+    quality={70}
+  />
 </section>
 
 <style>
