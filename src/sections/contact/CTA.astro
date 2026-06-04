@@ -3,23 +3,46 @@
 ---
 
 <section>
-    <div>
+    <div class="header-wrapper">
         <h2>Ready to Transform Your Business?</h2>
         <p>
             Partner with us for expert guidance and strategies that drive growth
             and success.
         </p>
     </div>
-
-    <div>
-        <button>Contact Us</button>
-        <button>Get Your Free Consultation</button>
+    <div class="btn-wrapper">
+        <button class="contact-btn">Contact Us</button>
+        <button class="consultation-btn">Get Your Free Consultation</button>
     </div>
 </section>
 
 <style>
     section {
+        background-color: white;
         text-align: center;
         padding: min(80px, 10vw);
+    }
+
+    .header-wrapper {
+        & > h2 {
+            font-size: var(--step-3);
+            margin: 0;
+        }
+    }
+
+    .btn-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 7px;
+        & > .contact-btn {
+            border: solid black 1px;
+            background-color: white;
+        }
+        & > .consultation-btn {
+            background-color: black;
+            color: white;
+        }
     }
 </style>
