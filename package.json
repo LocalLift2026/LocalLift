@@ -16,6 +16,7 @@
     "astro": "^6.3.3"
   },
   "devDependencies": {
+    "netlify-cli": "^26.1.0",
     "prettier": "3.8.3",
     "prettier-plugin-astro": "0.14.1"
   }
