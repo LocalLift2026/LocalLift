@@ -1,18 +1,20 @@
 ---
-import HeroImage from "@images/Home/Hero/hero-image.avif";
+import HeroIconBg from "@svg/heroIconBg.svg";
+import HeroImage from "@images/Solutions/Hero/hero-image.avif";
 
 import { Image } from "astro:assets";
 ---
 
 <section class="hero-section" id="hero">
+  <HeroIconBg class="hero-bg" />
   <div class="hero-content">
-    <h1>Websites That Get Local Businesses More Clients</h1>
+    <h1>Let’s put Your Business on the Map</h1>
     <p>
-      We design high-converting websites and optimize your online presence so
-      customers can find you, trust you, and book with you.
+      Book your free 20-minute consultation and find out exactly what it would
+      take to grow your local business online — no pressure, no commitment
     </p>
-    <a href="/solutions#consultation">
-      <button>Free Consultation</button>
+    <a href="#consultation">
+      <button>Book a Free Call</button>
     </a>
   </div>
 
@@ -21,13 +23,12 @@ import { Image } from "astro:assets";
     src={HeroImage}
     alt="Hero Image"
     format="avif"
-    fetchpriority="high"
+    quality={70}
   />
 </section>
 
 <style>
   .hero-section {
-    background-image: url("../../../public/svg/heroIconBg.svg");
     background-color: #1e1e1e;
     padding: min(80px, 10vw) 0 min(80px, 10vw) 0;
     align-items: center;
@@ -69,7 +70,7 @@ import { Image } from "astro:assets";
       font-size: var(--step-5);
       font-weight: 700;
     }
-    & button {
+    & > a > button {
       background-color: #1777eb;
       color: white;
     }

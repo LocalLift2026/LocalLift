@@ -18,7 +18,7 @@ import Footer from "../components/Footer/index.astro";
       :root {
         --step--2: clamp(0.9882rem, 0.9531rem + 0.1651vw, 1.1285rem);
         --step--1: clamp(1.0544rem, 0.9794rem + 0.3527vw, 1.3542rem);
-        --step-0: clamp(1.125rem, 1rem + 0.5882vw, 1.625rem);
+        --step-0: clamp(1.2004rem, 1.013rem + 0.5819vw, 1.95rem);
         --step-1: clamp(1.2004rem, 1.013rem + 0.8819vw, 1.95rem);
         --step-2: clamp(1.8808rem, 1.016rem + 1.2461vw, 2.34rem);
         --step-3: clamp(2rem, 1.0063rem + 1.6957vw, 2.6rem);
@@ -27,28 +27,24 @@ import Footer from "../components/Footer/index.astro";
         interpolate-size: allow-keywords;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         font-size: 1rem;
         width: 100%;
         padding: 0;
         margin: 0;
         outline: none;
-        font-family:
-          ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       }
 
-      p,
-      a,
-      li,
-      input,
-      textarea,
-      legend,
-      label {
+      * {
         font-family:
           ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
           "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
       }
+
       p {
         font-size: clamp(1.125rem, 0.9794rem + 0.3527vw, 1.3rem);
       }

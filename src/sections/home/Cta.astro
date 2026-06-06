@@ -1,11 +1,11 @@
 ---
-import CtaSecurityDiagram from "@images/Home/Cta/cta-security-diagram.webp";
+import CtaSecurityDiagram from "@images/Home/Cta/cta-security-diagram.avif";
 import Smudge from "@svg/icons/smudge.svg";
 
 import { Image } from "astro:assets";
 ---
 
-<section id="CTA-section">
+<section id="CTA">
   <div class="content">
     <div class="header-wrapper">
       <h2 class="cta-title">
@@ -13,15 +13,16 @@ import { Image } from "astro:assets";
       </h2>
     </div>
     <p>Let’s build a website that works for your business.</p>
-    <button>Get Started</button>
+    <a href="/solutions#consultation">
+      <button>Get Started</button>
+    </a>
   </div>
 
   <Image
     class="cta-diagram"
     src={CtaSecurityDiagram}
     alt="Hero Image"
-    format="webp"
-    quality={70}
+    format="avif"
   />
 </section>
 
@@ -50,7 +51,7 @@ import { Image } from "astro:assets";
     width: 500px;
     min-width: min(500px, 45vw);
     gap: 40px;
-    & button {
+    & > a > button {
       background-color: #1777eb;
       color: white;
     }

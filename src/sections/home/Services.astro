@@ -1,9 +1,9 @@
 ---
 import Smudge from "@svg/icons/smudge.svg";
-import websiteDesign from "@images/Home/Services/website-design.webp";
-import localSeoOptimization from "@images/Home/Services/local-seo-optimization.webp";
-import bookingSystemSetup from "@images/Home/Services/booking-system-setup.webp";
-import contentNdMediaCreation from "@images/Home/Services/content-and-media-creation.webp";
+import websiteDesign from "@images/Home/Services/website-design.avif";
+import localSeoOptimization from "@images/Home/Services/local-seo-optimization.avif";
+import bookingSystemSetup from "@images/Home/Services/booking-system-setup.avif";
+import contentNdMediaCreation from "@images/Home/Services/content-and-media-creation.avif";
 
 import { Image } from "astro:assets";
 
@@ -39,7 +39,7 @@ const services = [
 ];
 ---
 
-<section id="Services-section">
+<section id="services">
   <div class="header-wrapper">
     <div>
       <Smudge class="smudge smudge-services" />
@@ -61,8 +61,7 @@ const services = [
             alt={alt}
             width={500}
             height={500}
-            format="webp"
-            quality={70}
+            format="avif"
             sizes="(max-width: 768px) 90vw, 500px"
           />
           <figcaption>

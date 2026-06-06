@@ -1,6 +1,6 @@
 ---
 import Facebook from "@svg/logos/facebookIcon.svg";
-import Twitter from "@svg/logos/twitterIcon.svg";
+import Instagram from "@svg/logos/instagramIcon.svg";
 import LinkedIn from "@svg/logos/linkedinIcon.svg";
 import LocalLift from "@svg/logos/localLift.svg";
 ---
@@ -19,32 +19,37 @@ import LocalLift from "@svg/logos/localLift.svg";
       <small
         >Get started for free. Add your whole team as your needs grow.</small
       >
-      <button>Start Today</button>
+      <a href="/solutions#consultation">
+        <button>Start Today</button>
+      </a>
     </div>
   </div>
   <hr class="divider" />
   <div class="footer-bottom">
     <div class="legal">
-      <small>Terms & Privacy</small>
+      <small>
+        <a href="/terms-privacy">Terms & Privacy</a>
+      </small>
+
       <small>@2026 LocalLift LLC.</small>
     </div>
     <div class="socials">
       <a
-        href="https://facebook.com/yourpage"
+        href="https://www.facebook.com/profile.php?id=61590687838806"
         target="_blank"
         aria-label="Facebook"
       >
         <Facebook aria-hidden="true" focusable="false" />
       </a>
       <a
-        href="https://twitter.com/yourpage"
+        href="https://www.instagram.com/locallift2026/"
         target="_blank"
-        aria-label="Twitter"
+        aria-label="Instagram"
       >
-        <Twitter aria-hidden="true" focusable="false" />
+        <Instagram aria-hidden="true" focusable="false" />
       </a>
       <a
-        href="https://linkedin.com/in/yourpage"
+        href="https://www.linkedin.com/in/local-lift-181015410/"
         target="_blank"
         aria-label="LinkedIn"
       >
@@ -55,6 +60,12 @@ import LocalLift from "@svg/logos/localLift.svg";
 </footer>
 
 <style>
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: inherit;
+  }
+
   footer {
     color: white;
     padding: min(80px, 10vw) min(80px, 3vw) 50px min(80px, 3vw);
@@ -94,11 +105,11 @@ import LocalLift from "@svg/logos/localLift.svg";
     flex-direction: column;
     max-width: 200px;
     gap: 20px;
-    & h4 {
+    & > h4 {
       font-size: var(--step-0);
       margin: 0;
     }
-    & button {
+    & > a > button {
       background-color: #1777eb;
       color: white;
     }
@@ -118,8 +129,12 @@ import LocalLift from "@svg/logos/localLift.svg";
     align-items: center;
     .socials {
       display: flex;
+      align-items: center;
+      justify-content: center;
       gap: 20px;
       & svg {
+        width: 20px;
+        height: 20px;
         max-width: 20px;
         max-height: 20px;
         fill: white;

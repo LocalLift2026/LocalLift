@@ -2,149 +2,155 @@
 import Smudge from "@svg/icons/smudge.svg";
 
 const questionNdAnswers = [
-    {
-        question: "How long does it take to build my website?",
-        answer: "Most websites are completed within 1–2 weeks depending on the complexity and how quickly you provide your content (logo, photos, business info). Simple sites can be done even faster.",
-    },
-    {
-        question: "Will my website show up on Google?",
-        answer: "Yes. Every site we build is set up with local SEO best practices so your business can be found by people searching nearby. We also help set up or optimize your Google Business Profile.",
-    },
-    {
-        question: "Do I need to already have a website to work with you?",
-        answer: "Not at all. We work with businesses starting from scratch and those looking to improve an existing site. Either way, we've got you covered.",
-    },
-    {
-        question: "What kind of businesses do you work with?",
-        answer: "We specialize in local service businesses — barbershops, phone repair shops, nail salons, auto shops, cleaning services, restaurants, and more. If you serve your community, we're here for you.",
-    },
-    {
-        question: "How much does it cost?",
-        answer: "Not at all. We work with businesses starting from scratch and those looking to improve an existing site. Either way, we've got you covered.",
-    },
-    {
-        question: "What happens after my website is launched?",
-        answer: "We don't just hand it off and disappear. We offer maintenance plans so your site stays updated, secure, and running smoothly. We're a long-term partner, not a one-time service.",
-    },
+  {
+    question: "How long does it take to build my website?",
+    answer:
+      "Most websites are completed within 1–2 weeks depending on the complexity and how quickly you provide your content (logo, photos, business info). Simple sites can be done even faster.",
+  },
+  {
+    question: "Will my website show up on Google?",
+    answer:
+      "Yes. Every site we build is set up with local SEO best practices so your business can be found by people searching nearby. We also help set up or optimize your Google Business Profile.",
+  },
+  {
+    question: "Do I need to already have a website to work with you?",
+    answer:
+      "Not at all. We work with businesses starting from scratch and those looking to improve an existing site. Either way, we've got you covered.",
+  },
+  {
+    question: "What kind of businesses do you work with?",
+    answer:
+      "We specialize in local service businesses — barbershops, phone repair shops, nail salons, auto shops, cleaning services, restaurants, and more. If you serve your community, we're here for you.",
+  },
+  {
+    question: "How much does it cost?",
+    answer:
+      "Not at all. We work with businesses starting from scratch and those looking to improve an existing site. Either way, we've got you covered.",
+  },
+  {
+    question: "What happens after my website is launched?",
+    answer:
+      "We don't just hand it off and disappear. We offer maintenance plans so your site stays updated, secure, and running smoothly. We're a long-term partner, not a one-time service.",
+  },
 ];
 ---
 
-<section>
-    <div class="header-wrapper">
-        <div class="title-wrapper">
-            <h2>Frequently Asked Questions</h2>
-            <Smudge />
-        </div>
-        <p>Answers to Common Inquiries About Our Services</p>
+<section id="FAQs">
+  <div class="header-wrapper">
+    <div class="title-wrapper">
+      <h2>Frequently Asked Questions</h2>
+      <Smudge />
     </div>
-    <div class="questions">
-        {
-            questionNdAnswers.map(({ question, answer }) => {
-                return (
-                    <details>
-                        <summary>{question}</summary>
-                        <p>{answer}</p>
-                    </details>
-                );
-            })
-        }
-    </div>
+    <p>Answers to Common Inquiries About Our Services</p>
+  </div>
+  <div class="questions">
+    {
+      questionNdAnswers.map(({ question, answer }) => {
+        return (
+          <details>
+            <summary>{question}</summary>
+            <p>{answer}</p>
+          </details>
+        );
+      })
+    }
+  </div>
 </section>
 
 <style>
-    section {
-        background-color: #01141d;
-        color: white;
-        padding: min(80px, 10vw);
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        align-items: center;
-    }
+  section {
+    background-color: #01141d;
+    color: white;
+    padding: min(80px, 10vw);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
 
-    .header-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        & > p {
-            max-width: 320px;
-            margin: 0;
-            text-align: center;
-        }
-        & > .title-wrapper {
-            position: relative;
-            & > h2 {
-                font-size: var(--step-2);
-            }
-            & > svg {
-                position: absolute;
-                width: calc(clamp(2.8rem, 0.934rem + 3vw, 4.0435rem) * 5);
-                left: 50%;
-                right: unset;
-                transform: translateX(-45%);
-                top: unset;
-                bottom: 0;
-            }
-        }
+  .header-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > p {
+      max-width: 320px;
+      margin: 0;
+      text-align: center;
     }
+    & > .title-wrapper {
+      position: relative;
+      & > h2 {
+        font-size: var(--step-2);
+      }
+      & > svg {
+        position: absolute;
+        width: calc(clamp(2.8rem, 0.934rem + 3vw, 4.0435rem) * 5);
+        left: 50%;
+        right: unset;
+        transform: translateX(-45%);
+        top: unset;
+        bottom: 0;
+      }
+    }
+  }
 
+  .questions {
+    display: grid;
+    grid-template-columns: 550px 550px;
+    column-gap: 20px;
+    row-gap: 20px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    & > details {
+      cursor: pointer;
+      border-bottom: solid white 1px;
+      padding-bottom: 5px;
+      align-self: start;
+      & > summary {
+        font-size: var(--step--1);
+      }
+      & > p {
+        font-size: var(--step--2);
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
     .questions {
-        display: grid;
-        grid-template-columns: 550px 550px;
-        column-gap: 20px;
-        row-gap: 20px;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        & > details {
-            cursor: pointer;
-            border-bottom: solid white 1px;
-            padding-bottom: 5px;
-            align-self: start;
-            & > summary {
-                font-size: var(--step--1);
-            }
-            & > p {
-                font-size: var(--step--2);
-            }
-        }
+      grid-template-columns: 100%;
     }
+  }
 
-    @media (max-width: 1200px) {
-        .questions {
-            grid-template-columns: 100%;
-        }
-    }
+  /* SECTION - Collapsing header custom designs  */
 
-    /* SECTION - Collapsing header custom designs  */
+  .questions details,
+  .questions summary,
+  .questions details p {
+    -webkit-tap-highlight-color: transparent;
+  }
 
-    .questions details,
-    .questions summary,
-    .questions details p {
-        -webkit-tap-highlight-color: transparent;
-    }
+  summary::-webkit-details-marker {
+    display: none;
+  }
 
-    summary::-webkit-details-marker {
-        display: none;
-    }
+  summary::marker {
+    content: "+";
+  }
 
-    summary::marker {
-        content: "+";
-    }
+  details {
+    border-bottom: solid white 1px;
+  }
 
-    details {
-        border-bottom: solid white 1px;
-    }
+  details::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition:
+      block-size 0.25s ease,
+      content-visibility 0.25s ease allow-discrete;
+  }
 
-    details::details-content {
-        block-size: 0;
-        overflow: hidden;
-        transition:
-            block-size 0.25s ease,
-            content-visibility 0.25s ease allow-discrete;
-    }
-
-    details[open]::details-content {
-        block-size: auto;
-    }
+  details[open]::details-content {
+    block-size: auto;
+  }
 </style>

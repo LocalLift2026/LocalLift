@@ -1,11 +1,11 @@
 ---
 import Smudge from "@svg/icons/smudge.svg";
-import imageSrc from "@images/Home/Specialize/what-we-help.webp";
+import imageSrc from "@images/Home/Specialize/what-we-help.avif";
 
 import { Image } from "astro:assets";
 ---
 
-<section id="Specialize-section">
+<section id="specialize">
   <div class="content">
     <div>
       <Smudge class="smudge smudge-specialize" />
@@ -25,13 +25,7 @@ import { Image } from "astro:assets";
     </ul>
   </div>
 
-  <Image
-    class="image"
-    src={imageSrc}
-    alt="Cutting Hair Image"
-    format="webp"
-    quality={70}
-  />
+  <Image class="image" src={imageSrc} alt="Cutting Hair Image" format="avif" />
 </section>
 
 <style>

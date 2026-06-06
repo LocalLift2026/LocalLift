@@ -1,0 +1,61 @@
+---
+import Smudge from "@svg/icons/smudge.svg";
+
+const benefits = [
+  "✅ A free review of your current online presence",
+  "✅ A clear action plan tailored to your business",
+  "✅ Honest pricing with no hidden fees",
+];
+---
+
+<section id="benefits">
+  <h2 class="title">What <span><Smudge />you’ll</span> Get</h2>
+  <div class="benefits-list">
+    {benefits.map((benefit) => <p>{benefit}</p>)}
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: white;
+    text-align: center;
+    padding: min(80px, 10vw);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1600px;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .title {
+    font-size: var(--step-4);
+    max-width: 300px;
+    margin: 0;
+    & > span {
+      position: relative;
+      & > svg {
+        position: absolute;
+        transform: scale(0.8, 1.8);
+        width: calc(var(--step-4) * 3.4);
+        bottom: -20px;
+        right: 0;
+        left: -15px;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+    & > p {
+      font-size: var(--step-0);
+      margin: 0;
+    }
+  }
+</style>

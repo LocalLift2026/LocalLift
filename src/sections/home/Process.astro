@@ -1,8 +1,8 @@
 ---
-import Discovery from "@images/Home/Process/discovery.webp";
-import Grow from "@images/Home/Process/grow.webp";
-import Build from "@images/Home/Process/build.webp";
-import Launch from "@images/Home/Process/launch.webp";
+import Discovery from "@images/Home/Process/discovery.avif";
+import Grow from "@images/Home/Process/grow.avif";
+import Build from "@images/Home/Process/build.avif";
+import Launch from "@images/Home/Process/launch.avif";
 
 import Smudge from "@svg/icons/smudge.svg";
 
@@ -64,7 +64,7 @@ const process = [
 ];
 ---
 
-<section id="Process-section">
+<section id="process">
   <div class="header-wrapper">
     <div>
       <Smudge />
@@ -82,8 +82,12 @@ const process = [
 
           return (
             <div class:list={["card", { "card-reverse": isEven }]}>
-              {src && <Image loading="lazy" src={src} alt={`${title} image`} />}
-              {/* <Image loading="lazy" src={src} alt={`${title} image`} /> */}
+              <Image
+                loading="lazy"
+                src={src}
+                alt={`${title} image`}
+                format="avif"
+              />
 
               <div>
                 <h3 class="process-title">

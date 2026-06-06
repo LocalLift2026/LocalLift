@@ -4,60 +4,61 @@ import Form from "./Form.astro";
 import Smudge from "@svg/icons/smudge.svg";
 ---
 
-<section>
-    <div class="header-wrapper">
-        <div class="title-wrapper">
-            <h1>Contact Us</h1>
-            <Smudge />
-        </div>
-        <p>Any question or remarks? Just write us a message!</p>
+<section id="contact">
+  <div class="header-wrapper">
+    <div class="title-wrapper">
+      <h1>Contact Us</h1>
+      <Smudge />
     </div>
-    <div class="content-wrapper">
-        <ContactInfo />
-        <Form />
-    </div>
+    <p>Any question or remarks? Just write us a message!</p>
+  </div>
+  <div class="content-wrapper">
+    <ContactInfo />
+    <Form />
+  </div>
 </section>
 
 <style>
-    section {
-        padding: min(30px, 5vw) min(80px, 10vw) min(80px, 10vw) min(80px, 10vw);
-        background-color: white;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-        & > .header-wrapper > p {
-            color: #717171;
-        }
+  section {
+    scroll-margin-top: min(80px, 10vw);
+    padding: min(30px, 5vw) min(80px, 10vw) min(80px, 10vw) min(80px, 10vw);
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    & > .header-wrapper > p {
+      color: #717171;
     }
+  }
 
-    .title-wrapper {
-        position: relative;
-        & > h1 {
-            color: black;
-            font-size: var(--step-4);
-        }
-        & svg {
-            position: absolute;
-            width: calc(var(--step-4) * 5);
-            bottom: -18px;
-            left: 50%;
-            right: unset;
-            transform: translateX(-45%) scale(1.1, 1.2);
-            transform-origin: center;
-        }
+  .title-wrapper {
+    position: relative;
+    & > h1 {
+      color: black;
+      font-size: var(--step-4);
     }
+    & > svg {
+      position: absolute;
+      width: calc(var(--step-4) * 5);
+      bottom: -18px;
+      left: 50%;
+      right: unset;
+      transform: translateX(-45%) scale(1.1, 1.2);
+      transform-origin: center;
+    }
+  }
 
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 1000px) {
     .content-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
     }
-
-    @media (max-width: 1000px) {
-        .content-wrapper {
-            grid-template-columns: 1fr;
-        }
-    }
+  }
 </style>

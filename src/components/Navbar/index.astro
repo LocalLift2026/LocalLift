@@ -41,11 +41,11 @@ import XIcon from "@svg/icons/close-x.svg";
   .section-3 {
     display: flex;
     gap: 10px;
-    & button:nth-child(1) {
+    & a:nth-child(1) > button {
       background-color: #8a97a3;
       color: #1f2933;
     }
-    & button:nth-child(2) {
+    & a:nth-child(2) > button {
       background-color: #2d7be5;
       color: white;
     }
@@ -85,7 +85,7 @@ import XIcon from "@svg/icons/close-x.svg";
     width: 250px;
     height: 100vh;
     background-color: #1e1e1e;
-    z-index: 10;
+    z-index: 20;
     box-shadow:
       rgba(0, 0, 0, 0.25) 0px 54px 55px,
       rgba(0, 0, 0, 0.12) 0px -12px 30px,
@@ -138,8 +138,12 @@ import XIcon from "@svg/icons/close-x.svg";
     <a href="/contact-us/">Contact</a>
   </div>
   <div class="section-3">
-    <button>Contact Us</button>
-    <button>Free Consultation</button>
+    <a href="/contact-us/">
+      <button>Contact Us</button>
+    </a>
+    <a href="/solutions#consultation">
+      <button>Free Consultation</button>
+    </a>
   </div>
   <HamburgerIcon class="hamburger-icon icon" />
 </nav>
